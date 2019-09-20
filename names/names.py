@@ -25,6 +25,15 @@ for name_1 in names_1:
 # go through name_2
 # check to see if any names in 2 are new
 # if so, append those duplicates
+
+duplicates = []
+names= BinarySearchTree(names_1[0])
+for i in names_1:
+    names.insert(i)
+for i in range(len(names_2)):
+    if names.contains(names_2[i]):
+        duplicates.append(names_2[i])
+
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 print (f"runtime: {end_time - start_time} seconds")
